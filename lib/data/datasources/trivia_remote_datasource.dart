@@ -15,7 +15,7 @@ class TriviaRemoteDatasourceImpl implements TriviaRemoteDatasource {
   @override
   Future<TriviaModel> getTriviaRandomRemoteFromDatasource() async {
     final response =
-        await http.get(Uri.parse('http://numbersapi.com/random/trivia'));
+        await client.get(Uri.parse('http://numbersapi.com/random/trivia'));
     debugPrint(response.body);
     if (response.statusCode != 200) {
       throw ServerException();
