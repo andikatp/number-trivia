@@ -5,13 +5,15 @@ import 'package:number_trivia/presentations/pages/trivia/widgets/custom_error.da
 import 'package:number_trivia/presentations/pages/trivia/widgets/custom_textfield.dart';
 import 'package:number_trivia/presentations/pages/trivia/widgets/custom_trivia.dart';
 
+import '../../../injection.dart';
+
 class TriviaPageWrapperProvider extends StatelessWidget {
   const TriviaPageWrapperProvider({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => TriviaCubit(),
+      create: (context) => sl<TriviaCubit>(),
       child: const TriviaPage(),
     );
   }

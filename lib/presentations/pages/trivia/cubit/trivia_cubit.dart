@@ -9,8 +9,8 @@ const String _cacheErrorMessage = 'An error on cache, please try again later!';
 const String _generalErrorMessage = 'Check your connection!';
 
 class TriviaCubit extends Cubit<TriviaState> {
-  TriviaCubit() : super(TriviaInitial());
-  final TriviaUsecase triviaUsecase = TriviaUsecase();
+  TriviaCubit({required this.triviaUsecase}) : super(TriviaInitial());
+  final TriviaUsecase triviaUsecase;
 
   void onGetTriviaButtonPressedEvent(int number) async {
     emit(TriviaLoadingState());

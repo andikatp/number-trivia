@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:number_trivia/data/exceptions/exceptions.dart';
-
 import '../models/trivia_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,6 +9,9 @@ abstract class TriviaRemoteDatasource {
 }
 
 class TriviaRemoteDatasourceImpl implements TriviaRemoteDatasource {
+  final http.Client client;
+  TriviaRemoteDatasourceImpl({required this.client});
+
   @override
   Future<TriviaModel> getTriviaRandomRemoteFromDatasource() async {
     final response =

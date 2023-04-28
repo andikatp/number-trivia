@@ -6,8 +6,8 @@ import 'package:dartz/dartz.dart';
 import 'package:number_trivia/domains/repositories/trivia_repo.dart';
 
 class TriviaRepoImpl implements TriviaRepo {
-  final TriviaRemoteDatasource triviaRemoteDatasource =
-      TriviaRemoteDatasourceImpl();
+  final TriviaRemoteDatasource triviaRemoteDatasource;
+  TriviaRepoImpl({required this.triviaRemoteDatasource});
 
   @override
   Future<Either<Failure, TriviaEntity>> getTriviaFromRemoteSource(
